@@ -14,7 +14,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - objects
   - 
   - 
   - 
@@ -41,4 +41,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: objects
+    uniqueID: 4115002915
     locked: 0
