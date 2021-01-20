@@ -6,11 +6,16 @@ using Ink.Runtime;
 
 public class DialogManager1 : MonoBehaviour
 {
-
+    //
     public TextAsset inkJsonAsset;
     public Story story;
     public GameObject panel;
     public Text textPanel;
+    public List<string> tags;
+    public bool storyGoing;
+
+    //scripts called and related to this one within here and otherwise
+    public dialogStory1 dialogStory1;
 
 
     // Start is called before the first frame update
@@ -25,14 +30,38 @@ public class DialogManager1 : MonoBehaviour
 
     }
 
+
+    //refresh UI elements
+      //clear any current elemenst
+      //show any text chunks
+      
     public void refresh()
     {
+        /*
+        if (story.currentChoices.Count < 1)
+        {
+            clearUI();
+        }
+        */
+
         if (story.canContinue)
         {
+            clearUI();
+
+            storyGoing = true;
+
             string text = getNextStoryBlock();
 
             textPanel.text = text;
         }
+
+        if(story.canContinue == false)
+        {
+            Debug.Log("story can't continue");
+            storyGoing = false;
+            clearUI();
+        }
+        
     }
 
     public void clearUI()
@@ -52,11 +81,21 @@ public class DialogManager1 : MonoBehaviour
         }
         else
         {
-            //  panel.SetActive(false);
             Debug.Log("done");
-            //refreshStory();
         }
         return text;
+    }
+
+    //tag parser
+    public void parseTags()
+    {
+        tags = story.currentTags;
+
+        if (tags.Contains("strange"))
+        {
+            Debug.Log("strange innit");
+        }
+
     }
 
 }
