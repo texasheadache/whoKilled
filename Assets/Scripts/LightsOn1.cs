@@ -48,8 +48,6 @@ public class LightsOn1 : MonoBehaviour
     //bedRoomComp
     public GameObject bedRoomCompLight;
     public GameObject bedRoomCompDark; 
-
-
     //tub
     public GameObject tubRoom; 
 
@@ -98,28 +96,20 @@ public class LightsOn1 : MonoBehaviour
     public Button deskDarkBtn;
     public Button tableDarkBtn;
     public Button goToDiningRoomArrow;
-
     //lights - dining room
     public Button bookshelfLightBtn;
     public Button diningRoomLightLamp;
     public Button diningTableBtn;
-
     //nolights - dining room
     public Button diningRoomLampDark;
     public Button bookshelfDarkBtn;
-
-
     //lights - kitchen
     public Button kitchenLightBtn;
     public Button kitchenPictureBtn; 
-
     //lights - bathroom
     public Button bathIntroLightsBtn;
-
     //lights - bedRoom
     public Button bedRoomBedLightsBtn;
-
-
 
     //BOOLS
     public bool livingRoomLightsOn = false;
@@ -129,7 +119,6 @@ public class LightsOn1 : MonoBehaviour
     public bool bedRoomBedLightsOn = false;
     
     //public bool midDiningLightsOn = false; 
-
 
     // Start is called before the first frame update
     void Start()
@@ -411,8 +400,6 @@ public class LightsOn1 : MonoBehaviour
             bedRoomCompDark.SetActive(false);
         }
     }
-
-
     //MOVE TO OTHER ROOMS
 
     //LIGHTS MANAGEMENT
