@@ -9,13 +9,15 @@ public class DialogManager1 : MonoBehaviour
     //
     public TextAsset inkJsonAsset;
     public Story story;
-    public GameObject panel;
+    public GameObject panel1;
     public Text textPanel;
     public List<string> tags;
     public bool storyGoing;
+    
 
     //scripts called and related to this one within here and otherwise
-    public dialogStory1 dialogStory1;
+
+    // public dialogStory1 dialogStory1;
 
 
     // Start is called before the first frame update
@@ -43,10 +45,10 @@ public class DialogManager1 : MonoBehaviour
             clearUI();
         }
         */
-
         if (story.canContinue)
         {
             clearUI();
+            parseTags();
 
             storyGoing = true;
 
@@ -60,8 +62,9 @@ public class DialogManager1 : MonoBehaviour
             Debug.Log("story can't continue");
             storyGoing = false;
             clearUI();
+
         }
-        
+
     }
 
     public void clearUI()
@@ -77,11 +80,9 @@ public class DialogManager1 : MonoBehaviour
         if (story.canContinue)
         {
             text = story.Continue();
-            Debug.Log("loged");
         }
         else
         {
-            Debug.Log("done");
         }
         return text;
     }
@@ -91,11 +92,10 @@ public class DialogManager1 : MonoBehaviour
     {
         tags = story.currentTags;
 
-        if (tags.Contains("strange"))
+        if (tags.Contains("buttonsOn"))
         {
-            Debug.Log("strange innit");
+            Debug.Log("scene Ended");
         }
-
     }
 
 }

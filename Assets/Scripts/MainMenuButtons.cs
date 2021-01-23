@@ -8,9 +8,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuButtons : MonoBehaviour
 {
 
-    public Button startButton;
-    public Button optionsButton;
-    public Button quitButton; 
+    public AudioSource menuTheme; 
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +25,7 @@ public class MainMenuButtons : MonoBehaviour
     public void startGame()
     {
         SceneManager.LoadScene("LivingRoom");
+        menuTheme.mute = true;
     }
 
     public void quittingGame()
