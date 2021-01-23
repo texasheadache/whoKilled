@@ -66,14 +66,14 @@ checkingTags();
     }
     */ 
 
-    /*
+    
     public void investigateObject()
     {
         Debug.Log("testingButton");
         talkPanel.SetActive(true);
         btnBlockerPanel.SetActive(true);
     }
-    */
+    
 
     public void tagsTags()
     {

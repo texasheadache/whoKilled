@@ -110,6 +110,8 @@ public class LightsOn1 : MonoBehaviour
     public Button bathIntroLightsBtn;
     //lights - bedRoom
     public Button bedRoomBedLightsBtn;
+    //livingroom table buttons
+    public Button westernCivButton; 
 
     //BOOLS
     public bool livingRoomLightsOn = false;
@@ -225,6 +227,7 @@ public class LightsOn1 : MonoBehaviour
         diningRoomLampDark.gameObject.SetActive(false);
         bookshelfDarkBtn.gameObject.SetActive(false);
         bookshelfLightBtn.gameObject.SetActive(false);
+        westernCivButton.gameObject.SetActive(false);
 
 
         leftArrow1.SetActive(false);
@@ -633,11 +636,13 @@ public class LightsOn1 : MonoBehaviour
 
         if (livingRoomLightsOn)
         {
+          //  westernCivButton.gameObject.transform = new Vector2(-254, 113);
             livingTableLight.SetActive(true);
         }
 
         if (!livingRoomLightsOn)
         {
+            westernCivButton.gameObject.SetActive(true);
             livingTableNoLight.SetActive(true);
         }
     }
@@ -706,5 +711,8 @@ public class LightsOn1 : MonoBehaviour
 
     //KITCHEN
     //BUTTONS TO INVESTIGATE THINGS
+
+
+
     
 }
