@@ -10,14 +10,11 @@ public class EntranceTalk : MonoBehaviour
     public DialogManager1 dialogManager1;
     public GameObject talkPanel;
     public GameObject btnBlockerPanel;
-    public List<string> tags;
 
-    public bool closedIntroTalkPanel = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        //  story = dialogManager1.story;
         introPause();
         Debug.Log("lkj");
     }
@@ -26,8 +23,6 @@ public class EntranceTalk : MonoBehaviour
     void Update()
     {
         Talk1();
-        //        closeIntroTalkPanel();
-       // tagsTags();
     }
 
 
@@ -54,27 +49,6 @@ public class EntranceTalk : MonoBehaviour
         }
     }
 
-    public void talkkkk()
-    {
-        Debug.Log("sdlfkjslkj");
-    }
-
-
-    public void tagsTags()
-    {
-       // tags = dialogManager1.story.currentTags;
-
-        if (tags.Contains("endScene"))
-        {
-            Debug.Log("ending the scene");
-            talkPanel.SetActive(false);
-            btnBlockerPanel.SetActive(false);
-            closedIntroTalkPanel = true;
-        }
-    }
-
-
-
 
     //objects to investigate
 
@@ -84,8 +58,7 @@ public class EntranceTalk : MonoBehaviour
         talkPanel.SetActive(true);
         btnBlockerPanel.SetActive(true);
         dialogManager1.story.ChoosePathString("westernCiv");
-        // dialogManager1.story.Continue();
-
-
+        dialogManager1.refresh();
+       // dialogManager1.story.Continue();
     }
 }
