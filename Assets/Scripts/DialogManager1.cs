@@ -108,9 +108,16 @@ public class DialogManager1 : MonoBehaviour
         }
         */
 
+        /*
         if (tags.Contains("buttonsOn"))
         {
             Debug.Log("scene Ended");
+        }
+        */
+
+        if (tags.Contains("dog"))
+        {
+            Debug.Log("doggie");
         }
 
         if (tags.Contains("endScene"))

@@ -4063,7 +4063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9e82a8e8f0d34fbebe05f19a5d50e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJsonAsset: {fileID: 4900000, guid: 71a74f2a4fdaf4c808ddd8999cb06cd6, type: 3}
+  inkJsonAsset: {fileID: 4900000, guid: 4b86b9191710441c5bfcf3ccf51fd9c1, type: 3}
   panel1: {fileID: 1609897154}
   textPanel: {fileID: 1351177017}
   tags: []
