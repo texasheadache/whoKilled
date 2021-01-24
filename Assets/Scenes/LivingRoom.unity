@@ -4068,6 +4068,8 @@ MonoBehaviour:
   textPanel: {fileID: 1351177017}
   tags: []
   storyGoing: 0
+  talkPanel: {fileID: 1609897154}
+  btnBlockerPanel: {fileID: 781597481}
   entranceTalk: {fileID: 581801178}
 --- !u!4 &726861410
 Transform:

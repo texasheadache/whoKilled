@@ -27,7 +27,7 @@ public class EntranceTalk : MonoBehaviour
     {
         Talk1();
         //        closeIntroTalkPanel();
-        tagsTags();
+       // tagsTags();
     }
 
 
@@ -54,12 +54,17 @@ public class EntranceTalk : MonoBehaviour
         }
     }
 
+    public void talkkkk()
+    {
+        Debug.Log("sdlfkjslkj");
+    }
+
 
     public void tagsTags()
     {
-        tags = dialogManager1.story.currentTags;
+       // tags = dialogManager1.story.currentTags;
 
-        if (tags.Contains("endScene") && !closedIntroTalkPanel)
+        if (tags.Contains("endScene"))
         {
             Debug.Log("ending the scene");
             talkPanel.SetActive(false);

@@ -13,6 +13,8 @@ public class DialogManager1 : MonoBehaviour
     public Text textPanel;
     public List<string> tags;
     public bool storyGoing;
+    public GameObject talkPanel;
+    public GameObject btnBlockerPanel; 
 
     public EntranceTalk entranceTalk;  
 
@@ -45,17 +47,20 @@ public class DialogManager1 : MonoBehaviour
             clearUI();
         }
         */
+
+      //  parseTags();
+
         if (story.canContinue)
         {
-            clearUI();
-            parseTags();
-           // entranceTalk.tagsTags();
+           clearUI();
+        //   parseTags();
 
             storyGoing = true;
 
             string text = getNextStoryBlock();
 
             textPanel.text = text;
+            parseTags();
         }
 
         if(story.canContinue == false)
@@ -92,10 +97,27 @@ public class DialogManager1 : MonoBehaviour
     public void parseTags()
     {
         tags = story.currentTags;
+        /*
+        if (tags.Count > 0)
+        {
+            Debug.Log(tags[1]);
+            if(tags.Count > 1)
+            {
+                Debug.Log(tags[2]);
+            }
+        }
+        */
 
         if (tags.Contains("buttonsOn"))
         {
             Debug.Log("scene Ended");
+        }
+
+        if (tags.Contains("endScene"))
+        {
+            Debug.Log("ending the scene");
+            talkPanel.SetActive(false);
+            btnBlockerPanel.SetActive(false);
         }
     }
 
