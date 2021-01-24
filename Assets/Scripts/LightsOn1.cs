@@ -589,7 +589,7 @@ public class LightsOn1 : MonoBehaviour
         {
             room.SetActive(false);
         }
-        Debug.Log("clear");
+//        Debug.Log("clear");
     }
     //ROOM BACKGROUND PICTURE CLEARING FUNCTION
 
@@ -636,14 +636,17 @@ public class LightsOn1 : MonoBehaviour
 
         if (livingRoomLightsOn)
         {
-          //  westernCivButton.gameObject.transform = new Vector2(-254, 113);
             livingTableLight.SetActive(true);
+            westernCivButton.gameObject.SetActive(true);
+            westernCivButton.transform.GetComponent<RectTransform>().localPosition = new Vector3(-254, -70, 0);
         }
 
         if (!livingRoomLightsOn)
         {
-            westernCivButton.gameObject.SetActive(true);
             livingTableNoLight.SetActive(true);
+            westernCivButton.gameObject.SetActive(true);
+            westernCivButton.transform.GetComponent<RectTransform>().localPosition = new Vector3(-254, -30, 0);
+
         }
     }
     //LIVINGROOM

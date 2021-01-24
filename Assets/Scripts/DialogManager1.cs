@@ -13,11 +13,11 @@ public class DialogManager1 : MonoBehaviour
     public Text textPanel;
     public List<string> tags;
     public bool storyGoing;
-    
+
+    public EntranceTalk entranceTalk;  
 
     //scripts called and related to this one within here and otherwise
 
-    // public dialogStory1 dialogStory1;
 
 
     // Start is called before the first frame update
@@ -49,6 +49,7 @@ public class DialogManager1 : MonoBehaviour
         {
             clearUI();
             parseTags();
+           // entranceTalk.tagsTags();
 
             storyGoing = true;
 

@@ -1075,17 +1075,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1106,7 +1106,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 581801178}
-        m_MethodName: investigateObject
+        m_MethodName: westernCivLook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1115,7 +1115,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &178440320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3657,7 +3657,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 581801173}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 952e3b9bf9d3f453f81b82f7e39f947c, type: 3}
+  m_Script: {fileID: 11500000, guid: 33510d4fa3288455aab3fa66a1167c64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogManager1: {fileID: 726861409}
@@ -4063,11 +4063,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9e82a8e8f0d34fbebe05f19a5d50e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJsonAsset: {fileID: 4900000, guid: ffbaf9f50261e407da9d24d842023389, type: 3}
+  inkJsonAsset: {fileID: 4900000, guid: 71a74f2a4fdaf4c808ddd8999cb06cd6, type: 3}
   panel1: {fileID: 1609897154}
   textPanel: {fileID: 1351177017}
   tags: []
   storyGoing: 0
+  entranceTalk: {fileID: 581801178}
 --- !u!4 &726861410
 Transform:
   m_ObjectHideFlags: 0
@@ -4484,7 +4485,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &741303978
 Transform:
   m_ObjectHideFlags: 0
