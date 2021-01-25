@@ -87,14 +87,11 @@ public class LightsOn1 : MonoBehaviour
 
 
     //BUTTONS
-    //lights - living rooom
-    public Button lampBtnLights;
-    public Button deskLightsBtn;
-    public Button tableLightsBtn;
-    //nolights - living room 
+    //living rooom
     public Button lampDarkBtn;
     public Button deskDarkBtn;
     public Button tableDarkBtn;
+    public Button beachBoysBtn;
     public Button goToDiningRoomArrow;
     //lights - dining room
     public Button bookshelfLightBtn;
@@ -111,7 +108,8 @@ public class LightsOn1 : MonoBehaviour
     //lights - bedRoom
     public Button bedRoomBedLightsBtn;
     //livingroom table buttons
-    public Button westernCivButton; 
+    public Button westernCivButton;
+    
 
     //BOOLS
     public bool livingRoomLightsOn = false;
@@ -120,8 +118,6 @@ public class LightsOn1 : MonoBehaviour
     public bool bathRoomLightsOn = false;
     public bool bedRoomBedLightsOn = false;
     
-    //public bool midDiningLightsOn = false; 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -154,19 +150,16 @@ public class LightsOn1 : MonoBehaviour
         midDiningDarkRoom.SetActive(false);
         kitchenToBathroomArrow.SetActive(false);
         kitchenToMidDiningArrow.SetActive(false);
-
+        beachBoysBtn.gameObject.SetActive(false);
         rightArrow1.SetActive(false);
         leftArrow1.SetActive(true);
         leftArrow2.SetActive(false);
         toMidDiningArrow.SetActive(true);
 
 
-
         if (!diningRoomLightsOn)
         {
             diningRoomNoLight.SetActive(true);
-
-
         }
 
         if (diningRoomLightsOn)
@@ -191,18 +184,14 @@ public class LightsOn1 : MonoBehaviour
         kitchenPictureBtn.gameObject.SetActive(false);
         diningTableBackBtn.gameObject.SetActive(false);
         diningTableBtn.gameObject.SetActive(false);
-
-
-
-
         leftArrow1.SetActive(false);
         midDiningToDiningArrow.SetActive(true);
         midDiningToKitchenArrow.SetActive(true);
         toMidDiningArrow.SetActive(false);
         toMidDiningArrowLight.SetActive(false);
         diningTableBtn.gameObject.SetActive(true);
-
         kitchenLightBtn.gameObject.SetActive(false);
+
 
         if (!diningRoomLightsOn)
         {
@@ -223,13 +212,10 @@ public class LightsOn1 : MonoBehaviour
         lampDarkBtn.gameObject.SetActive(true);
         deskDarkBtn.gameObject.SetActive(true);
         tableDarkBtn.gameObject.SetActive(true);
-
         diningRoomLampDark.gameObject.SetActive(false);
         bookshelfDarkBtn.gameObject.SetActive(false);
         bookshelfLightBtn.gameObject.SetActive(false);
         westernCivButton.gameObject.SetActive(false);
-
-
         leftArrow1.SetActive(false);
         rightArrow1.SetActive(true);
         upArrow1.SetActive(false);
@@ -261,10 +247,8 @@ public class LightsOn1 : MonoBehaviour
         kitchenToBathroomArrow.SetActive(true);
         kitchenPictureBtn.gameObject.SetActive(true);
         diningTableBtn.gameObject.SetActive(false);
-
         bathIntroRightArrow.SetActive(true);
         bathIntroUpArrow.SetActive(true);
-
         kitchenLightBtn.gameObject.SetActive(true);
 
 
@@ -276,16 +260,19 @@ public class LightsOn1 : MonoBehaviour
         if (kitchenRoomLightsOn & diningRoomLightsOn)
         {
             kitchenLightLight.SetActive(true);
+
         }
 
         if (!kitchenRoomLightsOn && !diningRoomLightsOn)
         {
             kitchenDarkDark.SetActive(true);
+
         }
 
         if (!kitchenRoomLightsOn && diningRoomLightsOn)
         {
             kitchenLightDark.SetActive(true);
+
         }
     }
 
@@ -301,8 +288,6 @@ public class LightsOn1 : MonoBehaviour
         kitchenToBathroomArrow.SetActive(false);
         kitchenToMidDiningArrow.SetActive(false);
         kitchenPictureBtn.gameObject.SetActive(false);
-
-
         bathIntroRightArrow.SetActive(true);
         bathIntroUpArrow.SetActive(true);
         bathIntroLightsBtn.gameObject.SetActive(true);
@@ -392,6 +377,7 @@ public class LightsOn1 : MonoBehaviour
         bedRoomCompRightArrow.gameObject.SetActive(true);
         bedRoomBedLightsBtn.gameObject.SetActive(false);
 
+
         if (!bedRoomBedLightsOn)
         {
             bedRoomCompDark.SetActive(true);
@@ -416,15 +402,11 @@ public class LightsOn1 : MonoBehaviour
             livingRoomLightsOn = true;
             Debug.Log("lightson");
             
-            //lampBtn
-            lampBtnLights.gameObject.SetActive(true);
-            lampDarkBtn.gameObject.SetActive(false);
-            //deskBtn
-            deskLightsBtn.gameObject.SetActive(true);
-            deskDarkBtn.gameObject.SetActive(false);
-            //tableBtn
-            tableLightsBtn.gameObject.SetActive(true);
-            tableDarkBtn.gameObject.SetActive(false);            
+            lampDarkBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-188.5f, 133.3f, 0);
+            deskDarkBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(259.93f, 99.12f, 0);
+            tableDarkBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-25.69f, -28.98f, 0);
+            beachBoysBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-393, 160, 0);
+
         }
         else if (livingRoomLightsOn)
         {
@@ -433,17 +415,14 @@ public class LightsOn1 : MonoBehaviour
             livingRoomLightsOn = false;
             Debug.Log("lligtsoff");
             
-            //lamp
-            lampBtnLights.gameObject.SetActive(false);
-            lampDarkBtn.gameObject.SetActive(true);
-            //desk
-            deskLightsBtn.gameObject.SetActive(false);
-            deskDarkBtn.gameObject.SetActive(true);
-            //tableBtn
-            tableLightsBtn.gameObject.SetActive(false);
-            tableDarkBtn.gameObject.SetActive(true);
+            lampDarkBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-204.8f, 152.2f, 0);
+            deskDarkBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(249.91f, 111.81f, 0);
+            beachBoysBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-415, 184, 0);
+            tableDarkBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-26, -12.72f ,0);
+
+
         }
-        
+
     }
         
 
@@ -504,6 +483,7 @@ public class LightsOn1 : MonoBehaviour
                 kitchenDarkDark.SetActive(false);
                 kitchenRoomLightsOn = true;
                 Debug.Log("kitchenLightdDarkLight");
+                kitchenPictureBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(33, 86, 0);
             }
 
             else if (kitchenRoomLightsOn)
@@ -512,6 +492,7 @@ public class LightsOn1 : MonoBehaviour
                 kitchenDarkLight.SetActive(false);
                 kitchenRoomLightsOn = false;
                 Debug.Log("kitchenLightDarkDark");
+                kitchenPictureBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-1.8f, 32.6f, 0);
             }
         }
 
@@ -524,6 +505,7 @@ public class LightsOn1 : MonoBehaviour
                 kitchenLightDark.SetActive(false);
                 kitchenRoomLightsOn = true;
                 Debug.Log("kitchenlightlight");
+                kitchenPictureBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(39.4f, 84.3f, 0);
             }
 
             else if (kitchenRoomLightsOn)
@@ -532,9 +514,9 @@ public class LightsOn1 : MonoBehaviour
                 kitchenLightLight.SetActive(false);
                 kitchenRoomLightsOn = false;
                 Debug.Log("kitchenlightdark");
+                kitchenPictureBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(11.6f, 71.8f, 0);
             }
         }
-
     }
 
     public void bathIntroLightWorks()
@@ -545,7 +527,6 @@ public class LightsOn1 : MonoBehaviour
             bathIntroLight.SetActive(true);
             Debug.Log("lights on");
             bathRoomLightsOn = true;
-          //  bathIntroLightsBtn.transform.position = new Vector2(-132, 144);
         }
 
         else if (bathRoomLightsOn)
@@ -567,8 +548,6 @@ public class LightsOn1 : MonoBehaviour
             bedRoomBedLight.SetActive(true);
             Debug.Log("lights on");
             bedRoomBedLightsOn = true;
-          //  bedRoomBedLightsBtn.transform.position = new Vector2(-354, 33);
-
         }
 
         else if (bedRoomBedLightsOn)
@@ -582,6 +561,7 @@ public class LightsOn1 : MonoBehaviour
     //LIGHTS MANAGEMENT
 
 
+
     //ROOM BACKGROUND PICTURE CLEARING FUNCTION
     public void roomClearing()
     {
@@ -589,36 +569,33 @@ public class LightsOn1 : MonoBehaviour
         {
             room.SetActive(false);
         }
-//        Debug.Log("clear");
     }
     //ROOM BACKGROUND PICTURE CLEARING FUNCTION
 
 
+
     //BUTTONS TO INVESTIGATE THINGS
+
     //LIVINGROOM
     public void deskView()
     {
         roomClearing();
 
         lampDarkBtn.gameObject.SetActive(false);
-       // deskBtn.gameObject.SetActive(false);
         tableDarkBtn.gameObject.SetActive(false);
         goToDiningRoomArrow.gameObject.SetActive(false);
-
+        deskDarkBtn.gameObject.SetActive(false);
         rightArrow2.SetActive(true);
+
 
         if (livingRoomLightsOn)
         {
             midLightRoom.SetActive(true);
-            deskLightsBtn.gameObject.SetActive(true);
-            deskDarkBtn.gameObject.SetActive(false);
         }
 
         if (!livingRoomLightsOn)
         {
             midNoLightRoom.SetActive(true);
-            deskLightsBtn.gameObject.SetActive(false);
-            deskDarkBtn.gameObject.SetActive(true);
         }
     }
 
@@ -630,9 +607,9 @@ public class LightsOn1 : MonoBehaviour
         deskDarkBtn.gameObject.SetActive(false);
         tableDarkBtn.gameObject.SetActive(false);
         goToDiningRoomArrow.gameObject.SetActive(false);
-
         upArrow1.SetActive(true);
         rightArrow1.SetActive(false);
+
 
         if (livingRoomLightsOn)
         {
@@ -646,10 +623,10 @@ public class LightsOn1 : MonoBehaviour
             livingTableNoLight.SetActive(true);
             westernCivButton.gameObject.SetActive(true);
             westernCivButton.transform.GetComponent<RectTransform>().localPosition = new Vector3(-254, -30, 0);
-
         }
     }
     //LIVINGROOM
+
 
     //DININGROOM
     public void bookshelf()
@@ -660,6 +637,7 @@ public class LightsOn1 : MonoBehaviour
         leftArrow2.SetActive(true);
         toMidDiningArrow.SetActive(false);
         toMidDiningArrowLight.SetActive(false);
+
 
         if (diningRoomLightsOn)
         {
@@ -679,6 +657,7 @@ public class LightsOn1 : MonoBehaviour
         midDiningToDiningArrow.SetActive(false);
         midDiningToKitchenArrow.SetActive(false);
 
+
         if (diningRoomLightsOn)
         {
             midDiningTableLight.SetActive(true);
@@ -691,6 +670,7 @@ public class LightsOn1 : MonoBehaviour
     }
     //DININGROOM
 
+
     //KITCHEN
     
     public void kitchenPictureView()
@@ -700,6 +680,7 @@ public class LightsOn1 : MonoBehaviour
         kitchenToBathroomArrow.SetActive(false);
         kitchenToMidDiningArrow.SetActive(false);
         kitchenLightBtn.gameObject.SetActive(false);
+
 
         if (kitchenRoomLightsOn)
         {
@@ -711,11 +692,5 @@ public class LightsOn1 : MonoBehaviour
             kitchenPictureDark.SetActive(true);
         }
     }
-
     //KITCHEN
-    //BUTTONS TO INVESTIGATE THINGS
-
-
-
-    
 }

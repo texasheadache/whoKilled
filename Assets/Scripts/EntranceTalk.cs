@@ -61,4 +61,13 @@ public class EntranceTalk : MonoBehaviour
         dialogManager1.refresh();
        // dialogManager1.story.Continue();
     }
+
+    public void beachBoysRecord1()
+    {
+        Debug.Log("testingButton");
+        talkPanel.SetActive(true);
+        btnBlockerPanel.SetActive(true);
+        dialogManager1.story.ChoosePathString("beachBoys1");
+        dialogManager1.refresh();
+    }
 }
