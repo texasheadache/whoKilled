@@ -8,18 +8,20 @@ public class DialogManager1 : MonoBehaviour
 {
     //
     public TextAsset inkJsonAsset;
+
     public Story story;
+
     public GameObject panel1;
-    public Text textPanel;
-    public List<string> tags;
-    public bool storyGoing;
     public GameObject talkPanel;
-    public GameObject btnBlockerPanel; 
+    public GameObject btnBlockerPanel;
+
+    public bool storyGoing;
+
+    public List<string> tags;
+
+    public Text textPanel;
 
     public EntranceTalk entranceTalk;  
-
-    //scripts called and related to this one within here and otherwise
-
 
 
     // Start is called before the first frame update
@@ -34,10 +36,9 @@ public class DialogManager1 : MonoBehaviour
 
     }
 
-
     //refresh UI elements
-      //clear any current elemenst
-      //show any text chunks
+    //clear any current elemenst
+    //show any text chunks
       
     public void refresh()
     {
@@ -48,18 +49,16 @@ public class DialogManager1 : MonoBehaviour
         }
         */
 
-      //  parseTags();
-
         if (story.canContinue)
         {
            clearUI();
-        //   parseTags();
 
             storyGoing = true;
 
             string text = getNextStoryBlock();
 
             textPanel.text = text;
+
             parseTags();
         }
 
@@ -68,9 +67,7 @@ public class DialogManager1 : MonoBehaviour
             Debug.Log("story can't continue");
             storyGoing = false;
             clearUI();
-
         }
-
     }
 
     public void clearUI()
@@ -97,23 +94,6 @@ public class DialogManager1 : MonoBehaviour
     public void parseTags()
     {
         tags = story.currentTags;
-        /*
-        if (tags.Count > 0)
-        {
-            Debug.Log(tags[1]);
-            if(tags.Count > 1)
-            {
-                Debug.Log(tags[2]);
-            }
-        }
-        */
-
-        /*
-        if (tags.Contains("buttonsOn"))
-        {
-            Debug.Log("scene Ended");
-        }
-        */
 
         if (tags.Contains("dog"))
         {
@@ -127,5 +107,4 @@ public class DialogManager1 : MonoBehaviour
             btnBlockerPanel.SetActive(false);
         }
     }
-
 }

@@ -95,7 +95,7 @@ public class LightsOn1 : MonoBehaviour
     public Button goToDiningRoomArrow;
     //lights - dining room
     public Button bookshelfLightBtn;
-    public Button diningRoomLightLamp;
+  //  public Button diningRoomLightLamp;
     public Button diningTableBtn;
     //nolights - dining room
     public Button diningRoomLampDark;
@@ -183,7 +183,7 @@ public class LightsOn1 : MonoBehaviour
         kitchenDarkLight.SetActive(false);
         kitchenPictureBtn.gameObject.SetActive(false);
         diningTableBackBtn.gameObject.SetActive(false);
-        diningTableBtn.gameObject.SetActive(false);
+       // diningTableBtn.gameObject.SetActive(false);
         leftArrow1.SetActive(false);
         midDiningToDiningArrow.SetActive(true);
         midDiningToKitchenArrow.SetActive(true);
@@ -196,11 +196,14 @@ public class LightsOn1 : MonoBehaviour
         if (!diningRoomLightsOn)
         {
             midDiningDarkRoom.SetActive(true);
+          //  diningTableBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-29, -320, 0);
         }
 
         if (diningRoomLightsOn)
         {
             midDiningLightRoom.SetActive(true);
+        //    diningTableBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-29, -320, 0);
+
         }
     }
 
@@ -402,9 +405,9 @@ public class LightsOn1 : MonoBehaviour
             livingRoomLightsOn = true;
             Debug.Log("lightson");
             
-            lampDarkBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-188.5f, 133.3f, 0);
-            deskDarkBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(259.93f, 99.12f, 0);
-            tableDarkBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-25.69f, -28.98f, 0);
+            lampDarkBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-300, 208, 0);
+            deskDarkBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(467, 160, 0);
+            tableDarkBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-29, -47, 0);
             beachBoysBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-393, 160, 0);
 
         }
@@ -415,10 +418,10 @@ public class LightsOn1 : MonoBehaviour
             livingRoomLightsOn = false;
             Debug.Log("lligtsoff");
             
-            lampDarkBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-204.8f, 152.2f, 0);
-            deskDarkBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(249.91f, 111.81f, 0);
+            lampDarkBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-330, 243, 0);
+            deskDarkBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(450, 180, 0);
             beachBoysBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-415, 184, 0);
-            tableDarkBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-26, -12.72f ,0);
+            tableDarkBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-40, -28 ,0);
 
 
         }
@@ -440,8 +443,10 @@ public class LightsOn1 : MonoBehaviour
             bookshelfDarkBtn.gameObject.SetActive(false);
 
             //lamp
-            diningRoomLampDark.gameObject.SetActive(false);
-            diningRoomLightLamp.gameObject.SetActive(true);
+            //   diningRoomLampDark.gameObject.SetActive(false);
+            //   diningRoomLightLamp.gameObject.SetActive(true);
+            diningRoomLampDark.transform.GetComponent<RectTransform>().localPosition = new Vector3(288, 183, 0);
+
 
             //upArrow
 
@@ -460,8 +465,9 @@ public class LightsOn1 : MonoBehaviour
             bookshelfDarkBtn.gameObject.SetActive(true);
 
             //lamp
-            diningRoomLampDark.gameObject.SetActive(true);
-            diningRoomLightLamp.gameObject.SetActive(false);
+            //  diningRoomLampDark.gameObject.SetActive(true);
+            //   diningRoomLightLamp.gameObject.SetActive(false);
+            diningRoomLampDark.transform.GetComponent<RectTransform>().localPosition = new Vector3(182, 197, 0);
 
             //upArrow
 
@@ -615,14 +621,14 @@ public class LightsOn1 : MonoBehaviour
         {
             livingTableLight.SetActive(true);
             westernCivButton.gameObject.SetActive(true);
-            westernCivButton.transform.GetComponent<RectTransform>().localPosition = new Vector3(-254, -70, 0);
+            westernCivButton.transform.GetComponent<RectTransform>().localPosition = new Vector3(-254, -46, 0);
         }
 
         if (!livingRoomLightsOn)
         {
             livingTableNoLight.SetActive(true);
             westernCivButton.gameObject.SetActive(true);
-            westernCivButton.transform.GetComponent<RectTransform>().localPosition = new Vector3(-254, -30, 0);
+            westernCivButton.transform.GetComponent<RectTransform>().localPosition = new Vector3(-254, -31, 0);
         }
     }
     //LIVINGROOM

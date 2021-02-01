@@ -16,7 +16,7 @@ public class EntranceTalk : MonoBehaviour
     void Start()
     {
         introPause();
-        Debug.Log("lkj");
+        Debug.Log("started");
     }
 
     // Update is called once per frame
