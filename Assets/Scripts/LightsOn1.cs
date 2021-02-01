@@ -299,11 +299,13 @@ public class LightsOn1 : MonoBehaviour
         if (bathRoomLightsOn)
         {
             bathIntroLight.SetActive(true);
+
         }
 
         if (!bathRoomLightsOn)
         {
             bathIntroDark.SetActive(true);
+
         }
     }
 
@@ -489,7 +491,7 @@ public class LightsOn1 : MonoBehaviour
                 kitchenDarkDark.SetActive(false);
                 kitchenRoomLightsOn = true;
                 Debug.Log("kitchenLightdDarkLight");
-                kitchenPictureBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(33, 86, 0);
+                kitchenPictureBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(63, 155, 0);
             }
 
             else if (kitchenRoomLightsOn)
@@ -498,7 +500,7 @@ public class LightsOn1 : MonoBehaviour
                 kitchenDarkLight.SetActive(false);
                 kitchenRoomLightsOn = false;
                 Debug.Log("kitchenLightDarkDark");
-                kitchenPictureBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-1.8f, 32.6f, 0);
+                kitchenPictureBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-10, 67, 0);
             }
         }
 
@@ -511,7 +513,7 @@ public class LightsOn1 : MonoBehaviour
                 kitchenLightDark.SetActive(false);
                 kitchenRoomLightsOn = true;
                 Debug.Log("kitchenlightlight");
-                kitchenPictureBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(39.4f, 84.3f, 0);
+                kitchenPictureBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(74, 168, 0);
             }
 
             else if (kitchenRoomLightsOn)
@@ -520,7 +522,7 @@ public class LightsOn1 : MonoBehaviour
                 kitchenLightLight.SetActive(false);
                 kitchenRoomLightsOn = false;
                 Debug.Log("kitchenlightdark");
-                kitchenPictureBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(11.6f, 71.8f, 0);
+                kitchenPictureBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(15, 134, 0);
             }
         }
     }
@@ -533,6 +535,7 @@ public class LightsOn1 : MonoBehaviour
             bathIntroLight.SetActive(true);
             Debug.Log("lights on");
             bathRoomLightsOn = true;
+            bathIntroLightsBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-244, 280, 0);
         }
 
         else if (bathRoomLightsOn)
@@ -540,7 +543,8 @@ public class LightsOn1 : MonoBehaviour
             bathIntroDark.SetActive(true);
             bathIntroLight.SetActive(false);
             Debug.Log("ligtsOff");
-            bathRoomLightsOn = false; 
+            bathRoomLightsOn = false;
+            bathIntroLightsBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-300, 233, 0);
         }
     }
 
@@ -554,6 +558,8 @@ public class LightsOn1 : MonoBehaviour
             bedRoomBedLight.SetActive(true);
             Debug.Log("lights on");
             bedRoomBedLightsOn = true;
+            bedRoomBedLightsBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-529, -42, 0);
+
         }
 
         else if (bedRoomBedLightsOn)
@@ -562,6 +568,8 @@ public class LightsOn1 : MonoBehaviour
             bedRoomBedDark.SetActive(true);
             Debug.Log("ligtsOff");
             bedRoomBedLightsOn = false;
+            bedRoomBedLightsBtn.transform.GetComponent<RectTransform>().localPosition = new Vector3(-678, -58, 0);
+
         }
     }
     //LIGHTS MANAGEMENT
