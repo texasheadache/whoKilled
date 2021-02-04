@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class LightsOn1 : MonoBehaviour
 {
-    public GameObject[] rooms;    
+    public GameObject[] rooms;
+
+    public Locked locked;
 
     //ROOMS
     //living room
@@ -100,6 +102,7 @@ public class LightsOn1 : MonoBehaviour
     //nolights - dining room
     public Button diningRoomLampDark;
     public Button bookshelfDarkBtn;
+    public Button carverBook;
     //lights - kitchen
     public Button kitchenLightBtn;
     public Button kitchenPictureBtn; 
@@ -117,6 +120,7 @@ public class LightsOn1 : MonoBehaviour
     public bool kitchenRoomLightsOn = false;
     public bool bathRoomLightsOn = false;
     public bool bedRoomBedLightsOn = false;
+    public bool haveKey = false; 
     
     // Start is called before the first frame update
     void Start()
@@ -155,6 +159,9 @@ public class LightsOn1 : MonoBehaviour
         leftArrow1.SetActive(true);
         leftArrow2.SetActive(false);
         toMidDiningArrow.SetActive(true);
+        bookshelfLightBtn.gameObject.SetActive(false);
+        carverBook.gameObject.SetActive(false);
+
 
 
         if (!diningRoomLightsOn)
@@ -191,6 +198,8 @@ public class LightsOn1 : MonoBehaviour
         toMidDiningArrowLight.SetActive(false);
         diningTableBtn.gameObject.SetActive(true);
         kitchenLightBtn.gameObject.SetActive(false);
+        bookshelfLightBtn.gameObject.SetActive(false);
+        
 
 
         if (!diningRoomLightsOn)
@@ -349,27 +358,37 @@ public class LightsOn1 : MonoBehaviour
 
     public void goToBedRoomBed()
     {
-        roomClearing();
 
-        bathRoomRightArrow.SetActive(false);
-        bathroomToTubArrow.SetActive(false);
-        bathroomToIntroArrow.SetActive(false);
-        bedRoomBedLightsBtn.gameObject.SetActive(true);
-        Debug.Log("gotoRoom");
-        bedRoomBedLeftArrow.gameObject.SetActive(true);
-        bedRoomBedRightArrow.gameObject.SetActive(true);
-        bedRoomCompRightArrow.gameObject.SetActive(false);
-
-
-        if (!bedRoomBedLightsOn)
+        if (haveKey)
         {
-            bedRoomBedDark.SetActive(true);
-            bedRoomBedLight.SetActive(false);
+            roomClearing();
+
+            bathRoomRightArrow.SetActive(false);
+            bathroomToTubArrow.SetActive(false);
+            bathroomToIntroArrow.SetActive(false);
+            bedRoomBedLightsBtn.gameObject.SetActive(true);
+            Debug.Log("gotoRoom");
+            bedRoomBedLeftArrow.gameObject.SetActive(true);
+            bedRoomBedRightArrow.gameObject.SetActive(true);
+            bedRoomCompRightArrow.gameObject.SetActive(false);
+
+
+            if (!bedRoomBedLightsOn)
+            {
+                bedRoomBedDark.SetActive(true);
+                bedRoomBedLight.SetActive(false);
+            }
+            else if (bedRoomBedLightsOn)
+            {
+                bedRoomBedLight.SetActive(true);
+                bedRoomBedDark.SetActive(false);
+            }
         }
-        else if (bedRoomBedLightsOn)
+
+        else if (!haveKey)
         {
-            bedRoomBedLight.SetActive(true);
-            bedRoomBedDark.SetActive(false);
+            Debug.Log("the door is locked!");
+            locked.lockedDoor();
         }
     }
 
@@ -670,6 +689,8 @@ public class LightsOn1 : MonoBehaviour
         diningTableBackBtn.gameObject.SetActive(true);
         midDiningToDiningArrow.SetActive(false);
         midDiningToKitchenArrow.SetActive(false);
+        carverBook.gameObject.SetActive(true);
+
 
 
         if (diningRoomLightsOn)
@@ -683,6 +704,16 @@ public class LightsOn1 : MonoBehaviour
         }
     }
     //DININGROOM
+
+
+    //GETKEY
+
+    public void getKey()
+    {
+        haveKey = true;
+        Debug.Log("hasKey");
+        locked.gotKey();
+    }
 
 
     //KITCHEN

@@ -1,6 +1,10 @@
 INCLUDE intro
 INCLUDE westernCiv
 INCLUDE beachBoys1
+INCLUDE locked
+INCLUDE foundKey
+
+
 
 
 ->intro
@@ -9,4 +13,9 @@ INCLUDE beachBoys1
 
 ->beachBoys1
 
+->locked
+
+->foundKey
+
 -->END
+

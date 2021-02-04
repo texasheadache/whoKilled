@@ -21,8 +21,6 @@ public class DialogManager1 : MonoBehaviour
 
     public Text textPanel;
 
-    public EntranceTalk entranceTalk;  
-
 
     // Start is called before the first frame update
     void Start()
@@ -89,6 +87,8 @@ public class DialogManager1 : MonoBehaviour
         }
         return text;
     }
+
+
 
     //tag parser
     public void parseTags()
