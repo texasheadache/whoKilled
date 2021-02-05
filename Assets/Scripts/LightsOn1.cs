@@ -199,7 +199,9 @@ public class LightsOn1 : MonoBehaviour
         diningTableBtn.gameObject.SetActive(true);
         kitchenLightBtn.gameObject.SetActive(false);
         bookshelfLightBtn.gameObject.SetActive(false);
-        
+        carverBook.gameObject.SetActive(false);
+       // diningTableBtn.gameObject.SetActive(false);
+
 
 
         if (!diningRoomLightsOn)
@@ -262,6 +264,7 @@ public class LightsOn1 : MonoBehaviour
         bathIntroRightArrow.SetActive(true);
         bathIntroUpArrow.SetActive(true);
         kitchenLightBtn.gameObject.SetActive(true);
+        
 
 
         if (kitchenRoomLightsOn && !diningRoomLightsOn)
@@ -690,6 +693,7 @@ public class LightsOn1 : MonoBehaviour
         midDiningToDiningArrow.SetActive(false);
         midDiningToKitchenArrow.SetActive(false);
         carverBook.gameObject.SetActive(true);
+        diningTableBtn.gameObject.SetActive(false);
 
 
 
