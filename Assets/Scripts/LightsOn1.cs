@@ -60,6 +60,7 @@ public class LightsOn1 : MonoBehaviour
     public GameObject upArrow1;
     public GameObject rightArrow2;
     public GameObject leftArrow2;
+    public GameObject exitArrow;
     //mid dining room arrows
     public GameObject midDiningToDiningArrow;
     public GameObject midDiningToKitchenArrow;
@@ -120,7 +121,8 @@ public class LightsOn1 : MonoBehaviour
     public bool kitchenRoomLightsOn = false;
     public bool bathRoomLightsOn = false;
     public bool bedRoomBedLightsOn = false;
-    public bool haveKey = false; 
+    public bool haveKey = false;
+    public bool exitArrowOn = false; 
     
     // Start is called before the first frame update
     void Start()
@@ -221,6 +223,11 @@ public class LightsOn1 : MonoBehaviour
     public void goToLivingRoom()
     {
         roomClearing();
+
+        if(exitArrowOn == true)
+        {
+            exitArrow.gameObject.SetActive(true);
+        }
 
         goToDiningRoomArrow.gameObject.SetActive(true);
         lampDarkBtn.gameObject.SetActive(true);
@@ -374,6 +381,8 @@ public class LightsOn1 : MonoBehaviour
             bedRoomBedLeftArrow.gameObject.SetActive(true);
             bedRoomBedRightArrow.gameObject.SetActive(true);
             bedRoomCompRightArrow.gameObject.SetActive(false);
+            //  exitArrow.gameObject.SetActive(true);
+            exitArrowOn = true; 
 
 
             if (!bedRoomBedLightsOn)
